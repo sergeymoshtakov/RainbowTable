@@ -79,9 +79,10 @@ public class RainbowTable {
 
     // function to find Clear Text
     static String findCleartext(String targetHash, List<String> rainbowTable) {
-        for (String hash : rainbowTable) {
+        for (int i = 0; i < rainbowTable.size(); i += 2) {
+            String hash = rainbowTable.get(i + 1);
             if (hash.equals(targetHash)) {
-                return hash;
+                return rainbowTable.get(i);
             }
         }
         return null;
